@@ -11,6 +11,8 @@ let _resolve = (p) => {
 };
 
 module.exports = {
+    devtool: 'source-map',
+
     // 入口文件
     entry:{
         "main": '@/main.js'
@@ -44,10 +46,13 @@ module.exports = {
             template: _resolve('/src/index.html')
         })
     ],
+
     devServer: {
-        contentBase: _resolve('/dist'),
-        publicPath: _resolve('/src'),
+        //contentBase: _resolve('/dist'),
+        contentBase: false,
+        publicPath:'/',
         port: 8080,
+        inline: true,
         historyApiFallback: true
     }
 };

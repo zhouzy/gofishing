@@ -9,21 +9,29 @@ import './App.css';
 class App extends Component {
     constructor(props){
         super(props);
-        this.essayList = [];
+        this.state = {
+            essayList: []
+        };
     }
+
     componentDidMount(){
         axios.get("http://localhost:3001/getEssay").then(resp => {
-            this.essayList.concat(resp.data);
-            console.log(this.essayList);
+            this.setState({
+                essayList: resp.data
+            });
         });
     }
 
     render() {
+        const list = this.state.essayList;
+
         return (
             <div className="app">
                 <Header> </Header>
                 <main className="app-body">
-                    this.essayList.map((item,index) => <Essay item={item} key={index}> </Essay>)
+                    {
+                        list.map((item,index) => <Essay item={item} key={index}> </Essay>)
+                    }
                 </main>
             </div>
         );

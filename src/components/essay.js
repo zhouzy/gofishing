@@ -3,10 +3,12 @@ import React from "react";
 class Essay extends React.Component{
     constructor(props){
         super(props);
-        this.data = props.item;
+        this.props = props;
     }
 
     render() {
+        let data = this.props.item;
+
         return(
             <section className="section-box">
                 <img className="section-box__img" src={data.imgUrl}/>
