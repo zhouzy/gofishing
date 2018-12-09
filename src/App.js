@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Header from "./containers/header";
+import Essay from "./components/essay";
+
+import axios from "axios";
+
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+    constructor(props){
+        super(props);
+        this.essayList = [];
+    }
+    componentDidMount(){
+        axios.get("http://localhost:3001/getEssay").then(resp => {
+            this.essayList.concat(resp.data);
+            console.log(this.essayList);
+        });
+    }
+
+    render() {
+        return (
+            <div className="app">
+                <Header> </Header>
+                <main className="app-body">
+                    this.essayList.map((item,index) => <Essay item={item} key={index}> </Essay>)
+                </main>
+            </div>
+        );
+    }
 }
 
 export default App;

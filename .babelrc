@@ -2,7 +2,8 @@
  * Created by zhouzhongyu on 2018/11/29.
  */
 {
-    "presets": [
-    ["es2015", {"modules": false}], // webpack 2 本身已支持es6 module
-    "react"]
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
 }
