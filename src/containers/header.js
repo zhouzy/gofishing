@@ -1,8 +1,17 @@
 import React from "react";
+import {NavBar, Icon, SearchBar} from "antd-mobile";
+import Avator from "./avator.js";
+
+import "./header.less";
+
 class Header extends React.Component{
     render(){
         return(
-            <header> 去钓鱼吧 </header>
+            <header className="page-header">
+                <span className="logo-box"> </span>
+                <SearchBar className="search-box"> </SearchBar>
+                <Avator className="avatar-box"> </Avator>
+            </header>
         )
     }
 }

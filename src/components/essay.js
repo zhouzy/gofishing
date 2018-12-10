@@ -1,4 +1,6 @@
 import React from "react";
+let img = require("@/assets/img/pic1.jpg");
+import "./essay.less";
 
 class Essay extends React.Component{
     constructor(props){
@@ -10,15 +12,19 @@ class Essay extends React.Component{
         let data = this.props.item;
 
         return(
-            <section className="section-box">
-                <img className="section-box__img" src={data.imgUrl}/>
-                <div className="section-box__info">
-                    <span className="section-box__title">{data.title}</span>
-                    <span className="section-box__author">{data.author}</span>
-                    <span className="section-box__time">{data.time}</span>
-                    <span className="section-box__desc">{data.desc}</span>
+            <div className="essay-box">
+                <div className="essay-box__header"> {data.title} </div>
+                <div className="essay-box__body">
+                    <img className="essay-box__img" src={img}/>
+                    <div className="essay-box__desc">
+                        {data.desc}
+                    </div>
                 </div>
-            </section>
+                <div className="essay-box__footer">
+                    <span className="essay-box__author">{data.author}</span>
+                    <span className="essay-box__time">{data.time}</span>
+                </div>
+            </div>
         )
     }
 }

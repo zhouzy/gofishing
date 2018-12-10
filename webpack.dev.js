@@ -36,7 +36,7 @@ module.exports = {
             {test: /\.jsx?$/, use: ['babel-loader'], exclude: /node_modules/},
             {test: /\.css?$/, use: ['style-loader','css-loader']},
             {test: /\.less?$/, use: ['style-loader','css-loader','less-loader']},
-            {test: /\.svg?$/, use: ['file-loader']}
+            {test: /\.svg|jpg|woff2|ttf|eot|woff?$/, use: ['file-loader']}
         ]
     },
 
