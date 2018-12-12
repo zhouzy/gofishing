@@ -2,7 +2,7 @@ import React from "react";
 import {NavBar, Icon, SearchBar} from "antd-mobile";
 import Avator from "./avator.js";
 
-import "./header.less";
+import "@/routes/home/header.less";
 
 class Header extends React.Component{
     render(){

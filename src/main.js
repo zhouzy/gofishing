@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-var FastClick = require('fastclick');
+import AppRouter from '@/routes/index.jsx';
+
+let FastClick = require('fastclick');
 FastClick.attach(document.body);
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<AppRouter />, document.getElementById('root'));

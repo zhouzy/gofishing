@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import Header from "./containers/header";
-import NavBar from "./containers/nav-bar.js";
-import Essay from "./components/essay";
+import Header from "@/routes/home/header.js";
+import NavBar from "@/routes/home/nav-bar.js";
+import Essay from "@/components/essay";
+
 import 'antd-mobile/dist/antd-mobile.css';
 import "@/assets/font/ali-font/iconfont.css";
 
 import axios from "axios";
-
-import './App.css';
 
 class App extends Component {
     constructor(props){
